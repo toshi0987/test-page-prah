@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="公共施設予約システムの移行についてのお知らせ（仮ページ）">
+<title>公共施設予約システムの移行について｜○○市</title>
+
+<style>
+/* =========================================================
+   自治体HP風・施設予約システム移行案内 仮レイアウト
+   ※色・文言・URL・連絡先等は実際のHPに合わせて変更してください。
+   ========================================================= */
+
+:root {
+  --blue: #005bac;
+  --blue-dark: #00447f;
+  --blue-light: #eef6fc;
+  --blue-border: #b9d4ea;
+  --text: #333333;
+  --sub-text: #666666;
+  --border: #cccccc;
+  --light-gray: #f5f5f5;
+  --notice: #fff7df;
+  --notice-border: #d79b00;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #ffffff;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Noto Sans JP",
+    "Yu Gothic",
+    "YuGothic",
+    "Hiragino Kaku Gothic ProN",
+    Meiryo,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--blue-dark);
+}
+
+a:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 2px;
+}
+
+/* -------------------------
+   ページ全体
+------------------------- */
+
+.site-header {
+  border-top: 5px solid var(--blue);
+  border-bottom: 1px solid #dddddd;
+  background: #ffffff;
+}
+
+.header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 15px 20px;
+}
+
+.site-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none;
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px 70px;
+}
+
+/* -------------------------
+   パンくず
+------------------------- */
+
+.breadcrumb {
+  margin: 0 -20px;
+  padding: 12px 20px;
+  background: #f7f7f7;
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 14px;
+  color: #555555;
+}
+
+.breadcrumb a {
+  color: #555555;
+}
+
+.breadcrumb span {
+  margin: 0 7px;
+  color: #888888;
+}
+
+/* -------------------------
+   本文
+------------------------- */
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+.update {
+  text-align: right;
+  color: var(--sub-text);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin: 0 0 25px;
+  padding: 0 0 14px;
+  border-bottom: 3px solid var(--blue);
+  color: #222222;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+.intro {
+  margin: 0 0 25px;
+  font-size: 17px;
+}
+
+/* -------------------------
+   重要なお知らせ
+------------------------- */
+
+.notice {
+  margin: 25px 0 30px;
+  padding: 18px 20px;
+  background: var(--notice);
+  border: 1px solid #e7d29b;
+  border-left: 6px solid var(--notice-border);
+}
+
+.notice-title {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #7a5500;
+}
+
+.notice p {
+  margin: 4px 0;
+}
+
+/* -------------------------
+   新システムへのリンク
+------------------------- */
+
+.system-link-area {
+  margin: 25px 0 35px;
+  padding: 22px;
+  background: var(--blue-light);
+  border: 1px solid var(--blue-border);
+  text-align: center;
+}
+
+.system-link-area p {
+  margin: 0 0 12px;
+}
+
+.system-button {
+  display: inline-block;
+  min-width: 330px;
+  padding: 13px 25px;
+  background: var(--blue);
+  color: #ffffff;
+  border-radius: 3px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.system-button:hover {
+  background: var(--blue-dark);
+  color: #ffffff;
+}
+
+/* -------------------------
+   目次
+------------------------- */
+
+.toc {
+  margin: 30px 0 40px;
+  padding: 20px 24px;
+  background: #fafafa;
+  border: 1px solid var(--border);
+}
+
+.toc-title {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.toc ul {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.toc li {
+  margin: 3px 0;
+}
+
+/* -------------------------
+   見出し
+------------------------- */
+
+h2 {
+  margin: 48px 0 18px;
+  padding: 10px 14px;
+  border-left: 6px solid var(--blue);
+  background: #f2f6f9;
+  color: #222222;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+h3 {
+  margin: 28px 0 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dddddd;
+  color: #333333;
+  font-size: 19px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+ul,
+ol {
+  padding-left: 1.7em;
+}
+
+li {
+  margin: 4px 0;
+}
+
+/* -------------------------
+   日程
+------------------------- */
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+  text-align: left;
+}
+
+.schedule-table th {
+  width: 25%;
+  background: #f1f5f8;
+  font-weight: 700;
+}
+
+/* -------------------------
+   引継ぎ表
+------------------------- */
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+  text-align: left;
+}
+
+.data-table th {
+  width: 30%;
+  background: #f1f5f8;
+}
+
+/* -------------------------
+   変更点
+------------------------- */
+
+.change-list {
+  margin: 10px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.change-list li {
+  position: relative;
+  margin: 0;
+  padding: 12px 10px 12px 28px;
+  border-bottom: 1px dotted #cccccc;
+}
+
+.change-list li::before {
+  content: "●";
+  position: absolute;
+  left: 8px;
+  color: var(--blue);
+}
+
+/* -------------------------
+   手続き・利用方法
+------------------------- */
+
+.step-list {
+  counter-reset: step;
+  margin: 15px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step-list li {
+  counter-increment: step;
+  position: relative;
+  margin: 0;
+  padding: 15px 15px 15px 60px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.step-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: 15px;
+  top: 13px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #ffffff;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* -------------------------
+   リンク一覧
+------------------------- */
+
+.related-links {
+  margin: 15px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.related-links li {
+  margin: 0;
+  border-bottom: 1px dotted #cccccc;
+}
+
+.related-links a {
+  display: block;
+  padding: 11px 8px 11px 25px;
+  position: relative;
+}
+
+.related-links a::before {
+  content: "›";
+  position: absolute;
+  left: 8px;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--blue);
+}
+
+/* -------------------------
+   FAQ
+------------------------- */
+
+.faq {
+  border-top: 1px solid var(--border);
+}
+
+.faq details {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq summary {
+  padding: 14px 8px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.faq-answer {
+  padding: 0 15px 16px 25px;
+}
+
+/* -------------------------
+   問い合わせ
+------------------------- */
+
+.contact-box {
+  margin-top: 15px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  background: #fafafa;
+}
+
+.contact-box strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* -------------------------
+   注意書き・補足
+------------------------- */
+
+.note {
+  color: #555555;
+  font-size: 14px;
+}
+
+.back-top {
+  text-align: right;
+  margin-top: 35px;
+  font-size: 14px;
+}
+
+/* -------------------------
+   フッター
+------------------------- */
+
+.page-footer {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #dddddd;
+  color: #666666;
+  font-size: 14px;
+}
+
+/* -------------------------
+   スマートフォン
+------------------------- */
+
+@media (max-width: 700px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .header-inner {
+    padding: 12px 15px;
+  }
+
+  .site-name {
+    font-size: 18px;
+  }
+
+  .page {
+    padding: 0 12px 50px;
+  }
+
+  .breadcrumb {
+    margin: 0 -12px;
+    padding: 10px 12px;
+    line-height: 1.6;
+  }
+
+  .content {
+    padding-top: 24px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    margin-top: 38px;
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  .system-link-area {
+    padding: 18px 12px;
+  }
+
+  .system-button {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .schedule-table,
+  .data-table {
+    font-size: 14px;
+  }
+
+  .schedule-table th,
+  .schedule-table td,
+  .data-table th,
+  .data-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .schedule-table th,
+  .data-table th {
+    padding-bottom: 7px;
+    border-bottom: 0;
+  }
+
+  .schedule-table td,
+  .data-table td {
+    padding-top: 7px;
+  }
+
+  .toc {
+    padding: 16px;
+  }
+
+  .notice {
+    padding: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="site-name">○○市公式ホームページ</a>
+  </div>
+</header>
+
+<main class="page">
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくず">
+    <a href="#">ホーム</a>
+    <span>›</span>
+    <a href="#">市政情報</a>
+    <span>›</span>
+    <a href="#">施設予約</a>
+    <span>›</span>
+    公共施設予約システムの移行について
+  </nav>
+
+  <div class="content">
+
+    <div class="update">更新日：令和○年○月○日</div>
+
+    <h1>公共施設予約システムの移行について</h1>
+
+    <p class="intro">
+      現在ご利用いただいている公共施設予約システムは、
+      <strong>○月○日（○）から新しいシステムへ移行します。</strong>
+      移行に伴い、システムの利用方法や一部の手続きが変更となります。
+    </p>
+
+    <!-- 重要なお知らせ -->
+    <div class="notice">
+      <div class="notice-title">【重要】システム移行に伴う利用停止について</div>
+      <p>
+        ○月○日（○）から○月○日（○）まで、システム移行作業のため、
+        インターネットからの予約、予約変更、キャンセル、空き状況の確認等が
+        ご利用いただけません。
+      </p>
+      <p>
+        現在予約されている内容については、移行前に必ずご確認ください。
+      </p>
+    </div>
+
+    <!-- 新システムへのリンク -->
+    <div class="system-link-area">
+      <p><strong>新しい施設予約システムはこちら</strong></p>
+      <a href="#" class="system-button">
+        施設予約システムを利用する
+      </a>
+      <p class="note">
+        ※新システムの利用開始日時以降にアクセスしてください。
+      </p>
+    </div>
+
+    <!-- 目次 -->
+    <nav class="toc" aria-label="ページ内目次">
+      <div class="toc-title">目次</div>
+      <ul>
+        <li><a href="#schedule">移行スケジュール</a></li>
+        <li><a href="#request">利用者の皆様へのお願い</a></li>
+        <li><a href="#data">利用者情報・予約情報の引継ぎ</a></li>
+        <li><a href="#change">新システムで変わること</a></li>
+        <li><a href="#facilities">対象となる施設</a></li>
+        <li><a href="#guide">新システムの利用方法</a></li>
+        <li><a href="#faq">よくある質問（FAQ）</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <!-- 1 -->
+    <section id="schedule">
+      <h2>移行スケジュール</h2>
+
+      <table class="schedule-table">
+        <tr>
+          <th>○月○日（○）まで</th>
+          <td>
+            <strong>現行システムを利用</strong><br>
+            通常どおり、施設の検索、空き状況の確認、予約等をご利用いただけます。
+          </td>
+        </tr>
+        <tr>
+          <th>○月○日（○）○時～</th>
+          <td>
+            <strong>現行システム停止</strong><br>
+            システム移行作業のため、インターネットからの予約等ができません。
+          </td>
+        </tr>
+        <tr>
+          <th>○月○日（○）○時～</th>
+          <td>
+            <strong>新システム運用開始</strong><br>
+            新しい施設予約システムをご利用ください。
+          </td>
+        </tr>
+      </table>
+
+      <p class="note">
+        ※システム停止期間中の施設窓口での対応については、各施設へお問い合わせください。
+      </p>
+    </section>
+
+    <!-- 2 -->
+    <section id="request">
+      <h2>利用者の皆様へのお願い</h2>
+
+      <p>新システムへの移行にあたり、以下の事項をご確認ください。</p>
+
+      <ol>
+        <li>現在予約している施設・日時・利用内容をご確認ください。</li>
+        <li>現在使用している利用者IDの取扱いをご確認ください。</li>
+        <li>パスワードの再設定が必要かどうかをご確認ください。</li>
+        <li>登録しているメールアドレスが現在も利用できるかご確認ください。</li>
+        <li>新システムの利用開始日時をご確認ください。</li>
+      </ol>
+
+      <h3>メールアドレスについて</h3>
+
+      <p>
+        新システムから送信される予約確認等のメールを受信するため、
+        登録するメールアドレスに誤りがないかご確認ください。
+      </p>
+
+      <p class="note">
+        ※迷惑メール対策等を設定している場合は、システムからのメールを受信できるよう
+        設定をご確認ください。
+      </p>
+    </section>
+
+    <!-- 3 -->
+    <section id="data">
+      <h2>利用者情報・予約情報の引継ぎ</h2>
+
+      <p>
+        現在のシステムに登録されている利用者情報や予約情報の取扱いは、
+        以下のとおりです。
+      </p>
+
+      <table class="data-table">
+        <tr>
+          <th>利用者登録情報</th>
+          <td>○○○○○○</td>
+        </tr>
+        <tr>
+          <th>利用者ID</th>
+          <td>○○○○○○</td>
+        </tr>
+        <tr>
+          <th>パスワード</th>
+          <td>○○○○○○</td>
+        </tr>
+        <tr>
+          <th>登録メールアドレス</th>
+          <td>○○○○○○</td>
+        </tr>
+        <tr>
+          <th>現在の予約</th>
+          <td>○○○○○○</td>
+        </tr>
+        <tr>
+          <th>予約履歴</th>
+          <td>○○○○○○</td>
+        </tr>
+      </table>
+
+      <p class="note">
+        ※実際の引継ぎ内容に応じて、この表を修正してください。
+      </p>
+    </section>
+
+    <!-- 4 -->
+    <section id="change">
+      <h2>新システムで変わること</h2>
+
+      <p>
+        新しい施設予約システムでは、画面構成や一部の利用方法が変更となります。
+      </p>
+
+      <ul class="change-list">
+        <li>スマートフォンからも利用しやすい画面になります。</li>
+        <li>施設の空き状況を確認する方法が変わります。</li>
+        <li>予約・変更・キャンセルの操作方法が変わります。</li>
+        <li>予約に関するメール通知の内容が変更されます。</li>
+        <li>利用者登録・パスワード等の取扱いが変更されます。</li>
+      </ul>
+
+      <p class="note">
+        ※上記は仮の内容です。実際の変更点に合わせて修正してください。
+      </p>
+    </section>
+
+    <!-- 5 -->
+    <section id="facilities">
+      <h2>対象となる施設</h2>
+
+      <p>
+        新しい施設予約システムを利用できる施設は、以下のとおりです。
+      </p>
+
+      <table class="data-table">
+        <tr>
+          <th>施設名</th>
+          <th>所在地・問い合わせ先</th>
+        </tr>
+        <tr>
+          <td>○○体育館</td>
+          <td>
+            ○○市○○町○番○号<br>
+            電話：000-000-0000
+          </td>
+        </tr>
+        <tr>
+          <td>○○公民館</td>
+          <td>
+            ○○市○○町○番○号<br>
+            電話：000-000-0000
+          </td>
+        </tr>
+        <tr>
+          <td>○○文化会館</td>
+          <td>
+            ○○市○○町○番○号<br>
+            電話：000-000-0000
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 6 -->
+    <section id="guide">
+      <h2>新システムの利用方法</h2>
+
+      <h3>初めて利用する方</h3>
+
+      <ol class="step-list">
+        <li>
+          <strong>利用者登録を行います。</strong><br>
+          新システムの利用者登録画面から必要事項を入力してください。
+        </li>
+        <li>
+          <strong>登録内容を確認します。</strong><br>
+          入力したメールアドレス等に誤りがないか確認してください。
+        </li>
+        <li>
+          <strong>施設を検索します。</strong><br>
+          利用したい施設・日時・部屋等を検索します。
+        </li>
+        <li>
+          <strong>予約を申し込みます。</strong><br>
+          画面の案内に従って予約手続きを行ってください。
+        </li>
+      </ol>
+
+      <h3>操作マニュアル等</h3>
+
+      <ul class="related-links">
+        <li>
+          <a href="#">初回ログインについて</a>
+        </li>
+        <li>
+          <a href="#">新規利用者登録の方法</a>
+        </li>
+        <li>
+          <a href="#">施設予約の流れ</a>
+        </li>
+        <li>
+          <a href="#">操作マニュアル（PDF）</a>
+        </li>
+        <li>
+          <a href="#">操作説明動画</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 7 -->
+    <section id="faq">
+      <h2>よくある質問（FAQ）</h2>
+
+      <p>
+        施設予約システムの移行に関して、よくある質問を掲載しています。
+      </p>
+
+      <div class="faq">
+
+        <details>
+          <summary>Q. 現在使用している利用者IDは、そのまま使えますか？</summary>
+          <div class="faq-answer">
+            A. ○○○○○○です。
+          </div>
+        </details>
+
+        <details>
+          <summary>Q. 現在予約している内容はどうなりますか？</summary>
+          <div class="faq-answer">
+            A. ○○○○○○です。
+          </div>
+        </details>
+
+        <details>
+          <summary>Q. 新たに利用者登録をする必要がありますか？</summary>
+          <div class="faq-answer">
+            A. ○○○○○○です。
+          </div>
+        </details>
+
+        <details>
+          <summary>Q. システム停止期間中も施設を利用できますか？</summary>
+          <div class="faq-answer">
+            A. ○○○○○○です。
+          </div>
+        </details>
+
+        <details>
+          <summary>Q. パスワードを忘れた場合はどうすればよいですか？</summary>
+          <div class="faq-answer">
+            A. ○○○○○○です。
+          </div>
+        </details>
+
+        <details>
+          <summary>Q. スマートフォンから利用できますか？</summary>
+          <div class="faq-answer">
+            A. ○○○○○○です。
+          </div>
+        </details>
+
+        <details>
+          <summary>Q. システム停止期間中に予約の変更やキャンセルはできますか？</summary>
+          <div class="faq-answer">
+            A. ○○○○○○です。
+          </div>
+        </details>
+
+      </div>
+
+      <ul class="related-links">
+        <li>
+          <a href="#">施設予約システムに関するFAQ一覧</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 8 -->
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+
+      <p>
+        お問い合わせ内容によって、以下の窓口へお問い合わせください。
+      </p>
+
+      <div class="contact-box">
+        <strong>システムの操作・ログイン等に関するお問い合わせ</strong>
+        ○○市 ○○課<br>
+        電話：000-000-0000<br>
+        メール：xxxxx@example.jp<br>
+        受付時間：平日○時○分～○時○分
+      </div>
+
+      <div class="contact-box">
+        <strong>施設の予約・利用に関するお問い合わせ</strong>
+        各施設へお問い合わせください。<br>
+        各施設の連絡先は「対象となる施設」をご確認ください。
+      </div>
+
+      <p class="note">
+        ※お問い合わせの際は、施設名、利用日時、利用者ID等をお伝えいただくと、
+        スムーズにご案内できます。
+      </p>
+    </section>
+
+    <p class="back-top">
+      <a href="#">▲ ページの先頭へ戻る</a>
+    </p>
+
+    <div class="page-footer">
+      <strong>このページの情報発信元</strong><br>
+      ○○市 ○○部 ○○課<br>
+      〒000-0000　○○市○○町○番○号<br>
+      電話：000-000-0000　FAX：000-000-0000<br>
+      メール：xxxxx@example.jp
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>
